@@ -1,14 +1,115 @@
-@media screen {
-    min-width: 375px;
-    max-width: 834px;
-}
-
 html {
     background-color: #020659;
 }
 
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    margin: auto;
+}
+
 h1 {
     font-style: italic;
+    font-size: 1.25em;
+    line-height: 2cm;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2,
+h3 {
+    font-size: 1em;
+    color: #590242;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 2cm;
+}
+
+footer p {
+    font-size: .75em;
+    color: #590242;
+}
+
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+label span {
+    background-color: #020873;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+
+label span:before,
+label span:after {
+    background: #020873;
+    content: 'normal';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+label span:before {
+    top: 5px;
+}
+
+label span:after {
+    top: -5px;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height: 500px;
+}
+
+input:checked ~ label span {
+    background: transparent;
+}
+
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label:not(.steps) span:before,
+input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width: 834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    label span,
+    input {
+        display: none;
+    }
 }
 
 .scroll {
@@ -45,6 +146,7 @@ audio {
     bottom: 150px;
     left: 5px;
 }
+
 figure {
     margin: 0;
 }
@@ -78,77 +180,27 @@ audio::-webkit-media-controls-enclosure {
     background-color: rgba(255, 255, 255, .5);
 }
 
-#trending ::-webkit-scrollbar {
-    width: 15px;
-}
-
-#trending ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 15px #590242;
-}
-
-#trending ::-webkit-scrollbar-thumb {
-    background: #590242;
-    border-radius: 5px;
-}
-
-#trending ::-webkit-scrollbar-thumb:hover {
-    background: #020659;
-}
-
+#trending ::-webkit-scrollbar,
 #playlists ::-webkit-scrollbar,
 #curated ::-webkit-scrollbar {
     width: 15px;
 }
 
+#trending ::-webkit-scrollbar-track,
 #playlists ::-webkit-scrollbar-track,
 #curated ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 15px #020659;
+    box-shadow: inset 0 0 15px #590242;
 }
 
+#trending ::-webkit-scrollbar-thumb,
 #playlists ::-webkit-scrollbar-thumb,
 #curated ::-webkit-scrollbar-thumb {
-    background: #020659;
+    background: #590242;
     border-radius: 5px;
 }
 
+#trending ::-webkit-scrollbar-thumb:hover,
 #playlists ::-webkit-scrollbar-thumb:hover,
 #curated ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-}
-
-body {
-    font-family: Optima, sans-serif;
-    color: #ffffff;
-    margin: auto;
-}
-
-h1 {
-    font-size: 1.25em;
-    line-height: 2cm;
-}
-
-h1,
-h2,
-h3 {
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-h2,
-h3 {
-    font-size: 1em;
-    color: #590242;
-    line-height: 2cm;
-}
-
-footer p {
-    font-size: .75em;
-    color: #590242;
-}
-
-p,
-dl,
-dd {
-    font-size: 1em;
-    color: #ffffff;
+    background: #020659;
 }
