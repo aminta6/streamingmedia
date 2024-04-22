@@ -1,5 +1,5 @@
 html {
-    background-color: #020659;
+    background-color: #030a8c;
 }
 
 body {
@@ -7,6 +7,7 @@ body {
     color: #ffffff;
     margin: auto;
 }
+
 
 h1 {
     font-style: italic;
@@ -24,10 +25,21 @@ h3 {
     text-transform: uppercase;
     line-height: 2cm;
 }
+p {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color:#ffffff;
+}
 
-footer p {
+small {
     font-size: .75em;
     color: #590242;
+}
+header {
+background-color:#020659;
+padding:5%;
+}
+nav {
+background-color: #020659;
 }
 
 ul {
@@ -95,21 +107,6 @@ input:checked ~ label span:after {
 input:checked ~ label:not(.steps) span:before,
 input:checked ~ label:not(.steps) span:after {
     top: 0;
-}
-
-@media screen and (min-width: 834px) {
-    ul {
-        overflow: visible;
-        position: absolute;
-        top: 0;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    label span,
-    input {
-        display: none;
-    }
 }
 
 .scroll {
@@ -203,4 +200,19 @@ audio::-webkit-media-controls-enclosure {
 #playlists ::-webkit-scrollbar-thumb:hover,
 #curated ::-webkit-scrollbar-thumb:hover {
     background: #020659;
+}
+
+@media screen and (min-width: 834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    label span,
+    input {
+        display: none;
+    }
 }
